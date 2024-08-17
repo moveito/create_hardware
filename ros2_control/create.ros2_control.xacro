@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="create_ros2_control" params="prefix name">
+
+    <ros2_control name="${name}" type="system">
+      <hardware>
+        <plugin>create_hardware/CreateHardware</plugin>
+        <param name="usb_port">/dev/ROOMBA</param>
+        <param name="baud_rate">115200</param>
+        <!-- <param name="use_dummy">true</param> -->
+      </hardware>
+
+      <joint name="left_wheel_joint">
+        <command_interface name="velocity"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+      </joint>
+      <joint name="right_wheel_joint">
+        <command_interface name="velocity"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+      </joint>
+    </ros2_control>
+
+  </xacro:macro>
+
+</robot>

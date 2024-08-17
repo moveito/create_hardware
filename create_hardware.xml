@@ -1,0 +1,9 @@
+<library path="create_hardware">
+  <class name="create_hardware/CreateHardware"
+         type="create_hardware::CreateHardware"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+      The Roomba system interface.
+    </description>
+  </class>
+</library>
